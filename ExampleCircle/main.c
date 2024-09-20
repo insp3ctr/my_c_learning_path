@@ -4,21 +4,25 @@
 
 int main()
 {
-    double r;
+    float r;
     float umfang;
     float flaeche;
 
 
     printf("Radius des Kreises: ");
-    scanf("%lf", &r);
+    scanf("%f", &r);
 
-    if (r > 0) {
-        umfang = (2 * PI) * r;
-        flaeche = PI * (r * r);
+    if (r < 0.0f) {
 
-        printf("\nFlaeche: %lf", flaeche);
-        printf("\nUmfang: %lf", umfang);
+        printf("Wert muss größer als 0 sein!");
+        return 1;
     }
+
+    umfang = (2 * PI) * r;
+    flaeche = PI * (r * r);
+
+    printf("\nFlaeche: %f", flaeche);
+    printf("\nUmfang: %f", umfang);
 
 
     return 0;
